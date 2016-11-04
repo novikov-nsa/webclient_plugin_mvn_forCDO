@@ -23,7 +23,10 @@ if (idDiv =="settings") {
 	document.getElementById("execMaterialize").hidden = false;
 	$('#menuExecMaterialize').addClass('active');
 	$('#menuSettings').removeClass('active');
+	};
 };
+
+
 
 /* $('div.block').filter('#'+idDiv).show(); 
 $('div.block').not('#'+idDiv).hide(); */
@@ -33,4 +36,12 @@ function createDB(){
 	if(!db){alert("Failed to connect to database.");}
 };
 
+function showPanelC() {
+	var resultOnPress = document.getElementById("checkboxDiffBranches").checked;
+	if (resultOnPress== true){
+		document.getElementById("panelDiffBranches").hidden = false;
+	} else {
+		document.getElementById("panelDiffBranches").hidden = true;
+	};	
+	
 };

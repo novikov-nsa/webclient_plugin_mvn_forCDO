@@ -73,8 +73,9 @@
 			ИД артифакта
 			версия плагина
 			УРЛ апи-сервера
-			Имя репозитория
-			имя дескриптора развертывания
+			
+			Имя репозитория (/)
+			имя дескриптора развертывания (V)
 			Ветка
 			ветки для сравнения
 			
@@ -84,13 +85,56 @@
 		-->
 	  <div class="panel panel-default" id="execMaterialize">
         <div class="panel-body">
-        <div class="input-group input-group-lg" >
-            <input type="text" class="form-control" placeholder="Выберите ветку CDO" id="nameBranch">
+        <div class="input-group input-group-md" >
+            <input type="text" class="form-control" placeholder="Укажите ветку в CDO репозитории" id="nameBranch">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button"></button>
+              <button class="btn btn-default" type="button" id="buttonSelectBranch">
+				<span class="glyphicon glyphicon-th-list" />
+			  </button>
 
             </span>
         </div>
+		<p>
+		<div class="input-group input-group-md" >
+            <input type="text" class="form-control" placeholder="Укажите дескриптор развертывания" id="descDeploy">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" id="buttonSelectDescDeploy">
+				<span class="glyphicon glyphicon-th-list" />
+			  </button>
+
+            </span>
+        		
+		</div>
+		<p>
+		<div class="input-group input-group-md" >
+			<span class="input-group-addon">
+				<input type="checkbox"  onclick="showPanelC()" id="checkboxDiffBranches" />
+			</span>  
+			<h4><span class="label label-primary">Сформировать DDL diff-скрипты </span></h4>
+		</div>
+		<p>
+		<div class="panel panel-default" id="panelDiffBranches" hidden="true">
+			<div class="panel-body">
+				<div class="input-group input-group-md" >
+					<input type="text" class="form-control" placeholder="Выберите текущую ветку" id="currentBranch">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" id="buttonSelectCurrentBranch">
+								<span class="glyphicon glyphicon-th-list" />
+							</button>
+						</span>
+				</div>
+				<p>
+				<div class="input-group input-group-md" >
+					<input type="text" class="form-control" placeholder="Выберите ветку для сравнения" id="compareBranch">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" id="buttonSelectCompareBranch">
+								<span class="glyphicon glyphicon-th-list" />
+							</button>
+						</span>
+				</div>
+			</div>
+		</div>	
+		
         <P>
         <p>
           <a class="btn btn-lg btn-primary" href="#" onclick="showMessage('nameBranch')" role="button">Выполнить &raquo;</a>
